@@ -1,0 +1,1 @@
+Setting up scripts to for a test staking contract of a base erc20
