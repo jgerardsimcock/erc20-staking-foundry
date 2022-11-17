@@ -19,7 +19,8 @@ import "lib/openzeppelin-contracts/contracts/access/AccessControl.sol";
 
 
     constructor(string memory tokenName, string memory tokenSymbol, uint totalSupply) ERC20(tokenName, tokenSymbol) {
-        _mint(msg.sender, totalSupply)
+        _mint(msg.sender, totalSupply);
+        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
     function mint(address _to, uint _amount) public {
