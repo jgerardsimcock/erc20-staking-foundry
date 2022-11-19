@@ -24,8 +24,9 @@ import "./sampleERC20.sol";
 
     function stake(uint amountInBaseToken) public {
         uint amountInStakedToken =  amountInBaseToken / (((block.timestamp - deployTimestamp) / 1 hours) +1);
-        _mint(msg.sender, amountInStakedToken);
         sampleToken.burn(msg.sender, amountInBaseToken);
+        _mint(msg.sender, amountInStakedToken);
+        
     }
 
     function unstake(uint amountInStakedToken) public {
